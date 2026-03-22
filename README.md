@@ -2,6 +2,10 @@
 
 A modern, interactive quiz application designed to help users master various technology subjects through AI-powered learning. Featuring multiple difficulty levels, comprehensive question banks, and detailed performance analytics.
 
+## 🌟 Live Demo
+
+Try the QuizMaster Pro application now: **[https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)**
+
 ## 🚀 Features
 
 ### Core Functionality
@@ -160,6 +164,23 @@ The application uses a centralized `appState` object to manage:
 - Configurable based on difficulty level
 - Automatic question progression on timeout
 - Visual feedback with countdown display
+
+## 🚀 Deployment
+
+### GitHub Pages
+The QuizMaster Pro application is deployed on GitHub Pages at:
+**https://suganrajtech-jpg.github.io/quiz/**
+
+### Manual Deployment
+1. Clone this repository
+2. Open `index.html` in your web browser
+3. No build process required - it's a static application
+
+### Netlify/Vercel
+1. Connect your GitHub repository
+2. Set build command to empty (no build required)
+3. Set publish directory to root
+4. Deploy automatically on push
 
 ## 🌱 Contributing
 
