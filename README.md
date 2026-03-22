@@ -4,7 +4,19 @@ A modern, interactive quiz application designed to help users master various tec
 
 ## 🌟 Live Demo
 
-Try the QuizMaster Pro application now: **[https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)**
+**Current Status**: 🔄 **GitHub Pages Deployment in Progress**
+
+### Try These URLs:
+1. **Primary**: [https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)
+2. **Alternative**: [https://suganrajtech-jpg.github.io/quiz/index.html](https://suganrajtech-jpg.github.io/quiz/index.html)
+
+### If 404 Error Continues:
+**Enable GitHub Pages in Repository Settings:**
+1. Go to: https://github.com/suganrajtech-jpg/quiz
+2. Click **Settings** → **Pages**
+3. Select **Source**: "Deploy from a branch"
+4. Select **Branch**: "main" → "/ (root)"
+5. Click **Save**
 
 ## 🚀 Features
 
