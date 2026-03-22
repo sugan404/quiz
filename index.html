@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Pro - AI-Powered Learning Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">QuizMaster Pro</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle-btn">
+                    <span class="theme-icon">🎨</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Master Any Subject with
+                <span class="hero-gradient-text">AI-Powered Learning</span>
+            </h1>
+            <p class="hero-subtitle">
+                Experience personalized quizzes, instant feedback, and intelligent performance tracking 
+                that adapts to your learning style.
+            </p>
+            <button class="hero-cta" id="start-quiz-btn">
+                <span class="cta-text">Start Learning Now</span>
+                <span class="cta-glow"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section" id="quiz" style="display: none;">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <div class="quiz-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value" id="quiz-category">"quiz-category"</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Difficulty</span>
+                        <span class="meta-value" id="quiz-difficulty">Medium</span>
+                    </div>
+                </div>
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="quiz-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="quiz-timer">30s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-card">
+                    <h2 class="question-text" id="question-text">
+                        Loading AI-generated question...
+                    </h2>
+                    
+                    <div class="options-grid" id="options-grid">
+                        <button class="option-btn" data-option="0">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Option 1</span>
+                        </button>
+                        <button class="option-btn" data-option="1">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Option 2</span>
+                        </button>
+                        <button class="option-btn" data-option="2">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Option 3</span>
+                        </button>
+                        <button class="option-btn" data-option="3">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Option 4</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="explanation-card" id="explanation-card" style="display: none;">
+                    <div class="explanation-header">
+                        <span class="explanation-icon">💡</span>
+                        <h3 class="explanation-title">Explanation</h3>
+                    </div>
+                    <p class="explanation-text" id="explanation-text"></p>
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button class="control-btn primary" id="next-btn" disabled>Next Question</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section" id="dashboard" style="display: none;">
+        <div class="section-container">
+            <h2 class="section-title">📊 Performance Analytics</h2>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Total Quizzes</h3>
+                        <span class="card-icon">📝</span>
+                    </div>
+                    <div class="card-value" id="total-quizzes">0</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Average Score</h3>
+                        <span class="card-icon">🎯</span>
+                    </div>
+                    <div class="card-value" id="avg-score">0%</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Best Streak</h3>
+                        <span class="card-icon">🔥</span>
+                    </div>
+                    <div class="card-value" id="best-streak">0</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <div class="card-header">
+                        <h3>Total Time</h3>
+                        <span class="card-icon">⏱️</span>
+                    </div>
+                    <div class="card-value" id="total-time">0m</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title">Performance Trends</h3>
+                <div class="chart-placeholder">
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 60%"></div>
+                        <div class="chart-bar" style="height: 80%"></div>
+                        <div class="chart-bar" style="height: 45%"></div>
+                        <div class="chart-bar" style="height: 90%"></div>
+                        <div class="chart-bar" style="height: 70%"></div>
+                        <div class="chart-bar" style="height: 85%"></div>
+                        <div class="chart-bar" style="height: 75%"></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Feedback Modal -->
+    <div class="modal-overlay" id="category-modal" style="display: none;">
+        <div class="modal category-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🎯 Select Quiz Category</h2>
+                <button class="modal-close" id="category-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="category-grid">
+                    <button class="category-btn" data-category="artificial-intelligence">
+                        <div class="category-icon">🤖</div>
+                        <div class="category-name">Artificial Intelligence</div>
+                        <div class="category-desc">Neural networks, NLP, computer vision</div>
+                    </button>
+                    <button class="category-btn" data-category="ml-dl">
+                        <div class="category-icon">🧠</div>
+                        <div class="category-name">ML & Deep Learning</div>
+                        <div class="category-desc">Algorithms, models, training techniques</div>
+                    </button>
+                    <button class="category-btn" data-category="quantum-computing">
+                        <div class="category-icon">⚛️</div>
+                        <div class="category-name">Quantum Computing</div>
+                        <div class="category-desc">Qubits, quantum algorithms, applications</div>
+                    </button>
+                    <button class="category-btn" data-category="software-development">
+                        <div class="category-icon">💻</div>
+                        <div class="category-name">Software Development</div>
+                        <div class="category-desc">Programming, frameworks, best practices</div>
+                    </button>
+                    <button class="category-btn" data-category="cyber-security">
+                        <div class="category-icon">🔒</div>
+                        <div class="category-name">Cyber Security</div>
+                        <div class="category-desc">Network security, encryption, threats</div>
+                    </button>
+                    <button class="category-btn" data-category="blockchain">
+                        <div class="category-icon">⛓️</div>
+                        <div class="category-name">Blockchain</div>
+                        <div class="category-desc">Cryptocurrency, smart contracts, DeFi</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Feedback Modal -->
+    <div class="modal-overlay" id="feedback-modal" style="display: none;">
+        <div class="modal feedback-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🤖 AI Performance Feedback</h2>
+                <button class="modal-close" id="feedback-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="feedback-content" id="feedback-content">
+                    <!-- AI-generated feedback -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Selection Modal -->
+    <div class="modal-overlay" id="theme-modal" style="display: none;">
+        <div class="modal theme-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🎨 Choose Theme</h2>
+                <button class="modal-close" id="theme-modal-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="theme-grid">
+                    <button class="theme-option-btn" data-theme="dark-orange">
+                        <div class="theme-preview dark-orange-preview">
+                            <div class="preview-header">Dark Orange Professional</div>
+                            <div class="preview-accent"></div>
+                        </div>
+                    </button>
+                    <button class="theme-option-btn" data-theme="purple-gradient">
+                        <div class="theme-preview purple-gradient-preview">
+                            <div class="preview-header">Purple Gradient SaaS</div>
+                            <div class="preview-accent"></div>
+                        </div>
+                    </button>
+                    <button class="theme-option-btn" data-theme="neon-glass">
+                        <div class="theme-preview neon-glass-preview">
+                            <div class="preview-header">Dark AI Neon Glass</div>
+                            <div class="preview-accent"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level Selection Modal -->
+    <div class="modal-overlay" id="level-modal" style="display: none;">
+        <div class="modal level-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🎯 Select Difficulty Level</h2>
+                <button class="modal-close" id="level-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="level-grid">
+                    <button class="level-btn" data-level="easy">
+                        <div class="level-icon">🟢</div>
+                        <div class="level-name">Easy</div>
+                        <div class="level-desc">25 seconds per question</div>
+                    </button>
+                    <button class="level-btn" data-level="medium">
+                        <div class="level-icon">🟡</div>
+                        <div class="level-name">Medium</div>
+                        <div class="level-desc">20 seconds per question</div>
+                    </button>
+                    <button class="level-btn" data-level="hard">
+                        <div class="level-icon">🔴</div>
+                        <div class="level-name">Hard</div>
+                        <div class="level-desc">30 seconds per question</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Selection Modal -->
+    <div class="modal-overlay" id="category-modal" style="display: none;">
+        <div class="modal category-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🎯 Select Quiz Category</h2>
+                <button class="modal-close" id="category-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="category-grid">
+                    <button class="category-btn" data-category="artificial-intelligence">
+                        <div class="category-icon">🤖</div>
+                        <div class="category-name">Artificial Intelligence</div>
+                        <div class="category-desc">Neural networks, NLP, computer vision</div>
+                    </button>
+                    <button class="category-btn" data-category="ml-dl">
+                        <div class="category-icon">🧠</div>
+                        <div class="category-name">ML & Deep Learning</div>
+                        <div class="category-desc">Algorithms, models, training techniques</div>
+                    </button>
+                    <button class="category-btn" data-category="quantum-computing">
+                        <div class="category-icon">⚛️</div>
+                        <div class="category-name">Quantum Computing</div>
+                        <div class="category-desc">Qubits, quantum algorithms, applications</div>
+                    </button>
+                    <button class="category-btn" data-category="software-development">
+                        <div class="category-icon">💻</div>
+                        <div class="category-name">Software Development</div>
+                        <div class="category-desc">Programming, frameworks, best practices</div>
+                    </button>
+                    <button class="category-btn" data-category="cyber-security">
+                        <div class="category-icon">🔒</div>
+                        <div class="category-name">Cyber Security</div>
+                        <div class="category-desc">Network security, encryption, threats</div>
+                    </button>
+                    <button class="category-btn" data-category="blockchain">
+                        <div class="category-icon">⛓️</div>
+                        <div class="category-name">Blockchain</div>
+                        <div class="category-desc">Cryptocurrency, smart contracts, DeFi</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Feedback Modal -->
+    <div class="modal-overlay" id="feedback-modal" style="display: none;">
+        <div class="modal feedback-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">🤖 AI Performance Feedback</h2>
+                <button class="modal-close" id="feedback-close">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="feedback-content" id="feedback-content">
+                    <!-- AI-generated feedback -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
