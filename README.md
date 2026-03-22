@@ -4,19 +4,16 @@ A modern, interactive quiz application designed to help users master various tec
 
 ## 🌟 Live Demo
 
-**Current Status**: 🔄 **GitHub Pages Deployment in Progress**
+✅ **Application is Live and Working!**
 
-### Try These URLs:
-1. **Primary**: [https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)
-2. **Alternative**: [https://suganrajtech-jpg.github.io/quiz/index.html](https://suganrajtech-jpg.github.io/quiz/index.html)
+🎯 **Try QuizMaster Pro Now**: [https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)
 
-### If 404 Error Continues:
-**Enable GitHub Pages in Repository Settings:**
-1. Go to: https://github.com/suganrajtech-jpg/quiz
-2. Click **Settings** → **Pages**
-3. Select **Source**: "Deploy from a branch"
-4. Select **Branch**: "main" → "/ (root)"
-5. Click **Save**
+### What's Available:
+- 🤖 **6 Quiz Categories**: AI, ML, Quantum Computing, Software Development, Cyber Security, Blockchain
+- ⏱️ **3 Difficulty Levels**: Easy (25s), Medium (20s), Hard (30s)
+- 📊 **Performance Dashboard**: Track your progress and scores
+- 🎨 **3 Beautiful Themes**: Dark Orange, Purple Gradient, Neon Glass
+- 📱 **Fully Responsive**: Works perfectly on all devices
 
 ## 🚀 Features
 
