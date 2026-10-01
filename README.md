@@ -6,8 +6,7 @@ A modern, interactive quiz application designed to help users master various tec
 
 ✅ **Application is Live and Working!**
 
-🎯 **Try QuizMaster Pro Now**: [https://suganrajtech-jpg.github.io/quiz/](https://suganrajtech-jpg.github.io/quiz/)
-
+🎯 **Try QuizMaster Pro Now**: https://sugan404.github.io/quiz/
 ### What's Available:
 - 🤖 **6 Quiz Categories**: AI, ML, Quantum Computing, Software Development, Cyber Security, Blockchain
 - ⏱️ **3 Difficulty Levels**: Easy (25s), Medium (20s), Hard (30s)
